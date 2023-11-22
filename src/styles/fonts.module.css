@@ -1,0 +1,25 @@
+/* styles.css */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppis/Poppins-Regular.ttf') format('truetype');
+  }
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+  }
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-Regular.ttf') format('truetype');
+  }
+
+.poppis {
+    font-family: 'Poppis', sans-serif;
+  }
+
+.ubuntu {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.inter {
+  font-family: 'Inter', sans-serif;
+}

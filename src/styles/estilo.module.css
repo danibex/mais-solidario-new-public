@@ -1,0 +1,17 @@
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px; /* Largura da bolinha */
+    height: 16px; /* Altura da bolinha */
+    background-color: #4a90e2; /* Cor de fundo da bolinha */
+    border-radius: 50%; /* Borda arredondada para criar uma bolinha */
+    cursor: pointer; /* Altera o cursor ao passar sobre a bolinha */
+  }
+
+.range::-moz-range-thumb {
+    width: 16px; /* Largura da bolinha */
+    height: 16px; /* Altura da bolinha */
+    background-color: #4a90e2; /* Cor de fundo da bolinha */
+    border-radius: 50%; /* Borda arredondada para criar uma bolinha */
+    cursor: pointer; /* Altera o cursor ao passar sobre a bolinha */
+  }

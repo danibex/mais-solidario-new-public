@@ -1,0 +1,1 @@
+cogitar omitir nome de cidade / estado da parte de bolsas perto de você

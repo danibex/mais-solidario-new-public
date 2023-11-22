@@ -1,0 +1,1 @@
+> Será responsavel em se conectar ao sqlite obter os dados das tabelas e exportar
