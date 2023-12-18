@@ -1,9 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 import fonts from '@/styles/fonts.module.css'
+import Link from 'next/link'
 export default function CardBolsa(props: any) {
   return (
-    <button className={`${props.className} shadow border border-stone-300 rounded-lg w-[395px] h-[255px] hover:bg-stone-100 active:bg-stone-200`}>
+    <Link href={props.href ? props.href : ""} className={`${props.className} shadow border border-stone-300 rounded-lg w-[395px] h-[255px] hover:bg-stone-100 active:bg-stone-200`}>
         <div className='flex flex-row justify-between h-20 items-center'>
             <Image className='' src={props.src} alt="Logo da instituição" width={184} height={80}/>
             <div className={`${props.maisCursado ?  "" : "hidden"} bg-cyan-700 px-[16px] w-[186px] h-[32px] flex items-center rounded-l-full`}>
@@ -23,6 +24,6 @@ export default function CardBolsa(props: any) {
                 <h4 className='text-neutral-900 text-[22px] leading-9'>{props.precoComDesconto}</h4>
             </div>
         </div>
-    </button>
+    </Link>
   )
 }

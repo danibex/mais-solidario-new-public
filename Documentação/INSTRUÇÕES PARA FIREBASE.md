@@ -1,3 +1,6 @@
+# Primeiros passos
+1. Criar app no console
+2. Autorizar utilização de autenticação com o Google (dominios autorizados)
 # Instalar biblioteca
 * npm install firebase
 # Autenticar Usuário

@@ -4,9 +4,10 @@ export default async function handler(req, res) {
     const metodo = req.method;
     switch (metodo) {
       case "GET":
-        const id = gerarNumerosAleatoriosSemRepeticao(8, 1, 19); 
+        const id = gerarNumerosAleatoriosSemRepeticao(8, 1, 44); 
         let cursos = await pool.query(`
         SELECT 
+        DISTINCT
         nome, caminho_imagem
         FROM 
         cursos

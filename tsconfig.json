@@ -28,7 +28,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/pages/index.tsx", "src/pages/_app.tsx", "src/firebase/teste.js", "src/core/curso.js", "src/components/home/Home.jsx" ],
+, "src/pages/index.tsx", "src/pages/_app.tsx", "src/firebase/firebaseConfig.js", "src/core/curso.ts", "src/components/home/Home.jsx", "src/contexts/AutenticacaoContext.jsx" ],
   "exclude": [
     "node_modules"
   ]

@@ -13,7 +13,7 @@ export default function HeroAnuncioPrincipal() {
         {/* Imagem */}
         <Image className='absolute left-[580px]' src='/img/home/formando.png' width={438} height={214} alt='Formando'/>
         <div>
-            <Link href="/buscar" className='px-[16px] py-[8px] gap-2.5 bg-orange-400 rounded text-center text-white text-base hover:bg-orange-500 active:bg-orange-600'>Ver bolsas em promoção</Link>
+            <Link href="/buscar/buscar" className='px-[16px] py-[8px] gap-2.5 bg-orange-400 rounded text-center text-white text-base hover:bg-orange-500 active:bg-orange-600'>Ver bolsas em promoção</Link>
         </div>
       </div>
     </div>

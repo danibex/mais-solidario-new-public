@@ -4,27 +4,37 @@ import { IconChevronLeft, IconChevronRight, IconCircleFilled, IconMapPinFilled }
 import CardBolsa from './CardBolsa'
 import 'react-multi-carousel/lib/styles.css';
 import Link from 'next/link';
+import IdentificarLocalizacao from '@/utils/IdentificarLocalizacao'
 export default function BolsasProximas() {
   const [localizacao, setLocalizacao] = useState({latitude: 0, longitude: 0})
   const [cursos, setCursos] = useState([])
+  const [localizacaoCidadeEstado, setLocalizacaoCidadeEstado] = useState({cidade: "", estado: ""})
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log(position);
-        const {latitude, longitude} = position.coords
-        setLocalizacao({latitude: latitude, longitude: longitude})
+      const {latitude, longitude} = position.coords
+      setLocalizacao({latitude: latitude, longitude: longitude})
       },
       (error) => {
         console.error("Erro ao obter a localização:", error);
       }
-    );
+    )
     fetch("/api/bolsasProximas")
       .then(response => response.json())
       .then(arrayDeCursos => {
         setCursos(arrayDeCursos)
       })
   }, [])
+  
+  useEffect(() => {
+    if (localizacao.latitude !== 0 && localizacao.longitude !== 0) {
+      fetch(`/api/IdentificarLocalizacao?lat=${localizacao.latitude}&long=${localizacao.longitude}`)
+        .then((resp) => resp.json())
+        .then((resp) => {setLocalizacaoCidadeEstado(resp)})
+        .catch((erro) => console.log(`ERRO NA CHAMADA DE LOCALIZAÇÃO: ${erro}`));
+    }
+  }, [localizacao]);
 
 
   return (
@@ -37,9 +47,9 @@ export default function BolsasProximas() {
             <div className='flex flex-row'>
               <IconMapPinFilled className='mr-[8px]'/>
               <p className='mr-2'>Instituições com bolsas de estudo em: </p>
-              <p className='text-blue-500 font-bold'>Salvador - BA</p>
+              <p className='text-blue-500 font-bold'>{localizacaoCidadeEstado.cidade} - {localizacaoCidadeEstado.estado}</p>
             </div>
-            <Link href="/bolsas" className='text-orange-500 hover:text-orange-600 active:text-orange-700 font-bold'>Explorar mais Bolsas</Link>
+            <Link href={`/buscar/buscar?cidade=${localizacaoCidadeEstado.cidade}`} className='text-orange-500 hover:text-orange-600 active:text-orange-700 font-bold'>Explorar mais Bolsas</Link>
           </div>
         </div>
         {/* Cards */}
@@ -47,6 +57,7 @@ export default function BolsasProximas() {
           
           {cursos.map((curso, index) => {
             return <CardBolsa 
+                      href={`/bolsa/bolsa?id=${curso.id}&nome=${curso.nome_curso}`}
                       key={index} 
                       precoComDesconto={curso.preco_com_desconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} 
                       preco={curso.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} 

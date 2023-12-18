@@ -26,20 +26,22 @@ export default function FaculdadesComBolsasPrincipal() {
           </div>
           <button className={`${fonts.ubuntu} opacity-80 hover:opacity-90 active:opacity-100 font-bold`}>Explorar mais Faculdades</button>
         </div>
-        <div className='my-[32px] flex flex-row gap-[25px] justify-center items-center'>
+        <div className={`my-[32px] flex flex-row flex-wrap gap-[25px] justify-center items-center w-[1300px]`}>
           {/* Card */}  
           {parceiros.map((parceiro, index) => {
-            return <CardFaculdadeComBolsas key={index} nome={parceiro.nome} src={parceiro.caminho_imagem} recomendacao_porcentagem={parceiro.recomendacao_porcentagem} preco_curso_mais_barato={parceiro.preco_curso_mais_barato.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}/> 
+              return <CardFaculdadeComBolsas href={`buscar/buscar?faculdade=${parceiro.nome}`} key={index} nome={parceiro.nome} src={parceiro.caminho_imagem} recomendacao_porcentagem={parceiro.recomendacao_porcentagem} preco_curso_mais_barato={parceiro.preco_curso_mais_barato.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}/>      
           })}
         </div>
         {/* Botões Slide */}
+        {/** 
         <div className='mt-[36px] flex flex-row justify-center items-center '>
           <button className='mr-[28px] text-white' ><IconChevronLeft width={24} stroke={1.5}/></button>
           <button className='text-white mr-[12px]'><IconCircleFilled width={20} /></button>
           <button className='text-zinc-500 text-opacity-40 mr-[12px] hover:text-zinc-600 active:text-zinc-700'><IconCircleFilled width={20} /></button>
           <button className='text-zinc-500 text-opacity-40 mr-[28px] hover:text-zinc-600 active:text-zinc-700'><IconCircleFilled width={20} /></button>
           <button className='text-white' ><IconChevronRight stroke={1.5}/></button>
-        </div>
+        </div> 
+        */}
       </div>
     </div>
   )

@@ -12,13 +12,12 @@ export default function CaminhoAcademicoPrincipal() {
           .then(response => response.json())
           .then(arrayDeCursos => {
             setCursos(arrayDeCursos)
-            console.log(arrayDeCursos)
           })
       }, [])
     
 
   return (
-    <div className='py-[84px] flex flex-col items-center h-[840px] bg-white '>
+    <div id="vocacional" className='py-[84px] flex flex-col items-center h-[840px] bg-white '>
         <div className='w-[1233px]'>    
             <div className='flex flex-col'>
                 <div className='flex'>
@@ -40,11 +39,11 @@ export default function CaminhoAcademicoPrincipal() {
             <div className='my-[32px] gap-[24px] grid grid-cols-4'>
                 {/* Card */}
                 {cursos.map((curso, index) => {    
-                    return <CardCaminhoAcademico key={index} nome_do_curso={curso.nome} src={curso.caminho_imagem}/>
+                    return <CardCaminhoAcademico href={`/buscar/buscar?nome=${curso.nome}`} key={index} nome_do_curso={curso.nome} src={curso.caminho_imagem}/>
                 })}
             </div>
             {/* Botões Slide */}
-            <Carousel/>
+            {/** <Carousel/>*/}
         </div>
     </div>
   )
