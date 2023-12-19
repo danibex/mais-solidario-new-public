@@ -30,12 +30,12 @@ switch (metodo) {
         WHERE
             cursos.id = ${curso_id}
     `)
-    fetch('https://api.asaas.com/payments',{
+    fetch('https://sandbox.asaas.com/api/payments',{
         method: 'POST',
         headers: {
             accept: 'application/json',
             'content-type': 'application/json',
-            access_token: 'end/point/de/pagamento'
+            access_token: 'token'
         },
         body: JSON.stringify({
             billingType: 'BOLETO',

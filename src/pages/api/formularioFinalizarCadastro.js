@@ -2,13 +2,13 @@ const pool = require('../../models/conectarAoBanco');
 export default async function handler(req, res) {
     const metodo = req.method; 
     const usuario = req.body
-    const url = 'https://api.asaas.com/customers';
+    const url = 'https://sandbox.asaas.com/api/customers';
     const options = {
       method: 'POST',
       headers: {
         accept: 'application/json',
         'content-type': 'application/json',
-        access_token: 'end/point/de/pagamento'
+        access_token: 'token'
       },
       body: JSON.stringify(usuario)
     };
