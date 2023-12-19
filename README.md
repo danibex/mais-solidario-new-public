@@ -2,7 +2,17 @@
 > A aplicação é um ecommerce de bolsas de estudos que utiliza as tecnologias: React, Nextjs, Tailwindcss e Postgresql.
 
 # Pré Visualização
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0eMHkL0lgDI?si=vmxj9cMukUuDUgFJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## Página Inicial
+ <img height="auto" width="auto" src="./inicio.png"/>
+
+## Página de bolsas
+ <img height="auto" width="auto" src="./bolsas.png"/>
+
+## Detalhe de bolsa
+ <img height="auto" width="auto" src="./bolsas-detalhes.png"/>
+
+## Finalização de cadastro
+ <img height="auto" width="auto" src="./finalizar-cadastro.png"/>
 
 # Instalação e uso
 
